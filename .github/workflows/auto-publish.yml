@@ -112,7 +112,7 @@ jobs:
         if: steps.get_previous_version.outputs.version_increased == 'true' && steps.get_previous_version.outputs.is_beta == 'true'
         run: |
           # First publish with original package name
-          npm publish --access public --tag beta
+          npm publish --access public
           
           # Change package name and publish as baileys-elite if different
           if [ "$ORIGINAL_NAME" != "baileys-elite" ]; then
